@@ -1,0 +1,8 @@
+.boxy {
+  width: 73%;
+  height: 90vh;
+  justify-content: space-between;
+  background-color: rgb(44, 44, 44);
+  overflow: hidden;
+  display: inline-block;
+}
