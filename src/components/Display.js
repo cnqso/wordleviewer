@@ -1,13 +1,16 @@
 import React from 'react';
-import "./Display.css"
+import "./Display.css";
+import WordleDisplay from "./WordleDisplay";
 
 
 
 
 function Display () {
     return (
+
     <div class="boxy">
-        content content content
+        <WordleDisplay />
+        <WordleDisplay />
     </div>
     );
 }

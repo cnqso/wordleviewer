@@ -1,0 +1,54 @@
+.wordledisplay {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    place-content: center;
+    text-align: center;
+    font-size: calc(3vw);
+    margin: 1vw;
+}
+
+.wordle-char {
+    width: 1em;
+    height: 1em;
+    display: grid;
+    place-content: center;
+    border: 2px solid #444;
+    padding: 0.5em;
+    margin: 0.1em;
+      
+    color: transparent;
+  }
+
+  .yellow {
+    background-color: #c9b458;
+    border-color: #c9b458;
+    color: #f0f0f0;
+  }
+  
+  .green {
+    background-color: #6aaa64;
+    border-color: #6aaa64;
+    color: #f0f0f0;
+  }
+  
+  .blank {
+    color: #f0f0f0;
+  }
+  
+  .wordle-char:hover, .reveal {
+    animation-name: reveal;
+    animation-duration: .5s; 
+  }
+  
+  @keyframes reveal {
+    0% {
+      transform: scaleY(1);
+    }
+    50% {
+      transform: scaleY(.1); 
+    }
+    100% {
+      transform: scaleY(1);
+    }
+  }
+  
