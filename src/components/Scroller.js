@@ -58,13 +58,11 @@ const Scroller = () => {
 	const newlist = generate(50);
 	const ref = useRef(null);
 	return (
-		<div className="scrollbox">
 			<div ref={ref} className="scroller">
 				{newlist.map((k) => (
 					<Box key={k} root={ref} />
 				))}
 			</div>
-		</div>
 	);
 };
 

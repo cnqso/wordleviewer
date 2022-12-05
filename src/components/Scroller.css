@@ -3,20 +3,11 @@
   }
   
 
-.scrollbox {
-    position: relative;
-    float:left;
-    padding: 1px;
-    margin-left:1px;
-    width: 25vw;
-}
-
-
   .scroller {
     overflow-y: scroll;
-    width: 25vw;
+    width: 25%;
     height: 100%;
-    position:fixed;
+    position:relative;
     float:left;
     padding:10px;
     border: 1px solid #d0ffcc;

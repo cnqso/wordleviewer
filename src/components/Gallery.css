@@ -1,8 +1,12 @@
-.boxy {
-  width: 73%;
-  height: 90vh;
-  justify-content: space-between;
-  background-color: rgb(44, 44, 44);
-  overflow: hidden;
-  display: inline-block;
+.gallery {
+    background-color: rgb(44, 44, 44);
+    margin: auto;
+    background-color: #282c34;
+    color: white;
+    overflow: hidden;
+    width: 90vw;
+    height: 80vh;
+    font-size: calc(10px + 2vmin);
+    display: flex;
+
 }

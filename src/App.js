@@ -1,20 +1,16 @@
 import React from 'react';
 import './App.css';
-import Scroller from './components/Scroller';
-import Nav from './components/Nav';
 import Gallery from './components/Gallery';
+import Nav from './components/Nav';
+
 
 function App() {
 
-
   return (
-    <div className="App">
+    <div class="App">
 
       <Nav />
-      <div>
-      <Scroller />
       <Gallery />
-      </div>
       
     </div>
   );
