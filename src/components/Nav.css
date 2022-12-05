@@ -1,8 +1,8 @@
 nav {
     text-align: center;
     width:100%;
-    height:30px;
-    line-height:30px;
+    height:1vh;
+    line-height:100%;
     display:table;
     margin-bottom: 1vh;
     background-color: #2f446e;

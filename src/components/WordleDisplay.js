@@ -55,7 +55,6 @@ function WordleDisplay () {
     Begin();
     return (
         <div>
-            <button onClick={Begin}>click</button>
             <div class="wordledisplay" onClick={Begin}>
             <span class="wordle-char .reveal">K</span>
             <span class="wordle-char .reveal ">E</span>
