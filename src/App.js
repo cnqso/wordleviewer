@@ -2,17 +2,20 @@ import React from 'react';
 import './App.css';
 import Gallery from './components/Gallery';
 import Nav from './components/Nav';
-import WordleDisplay from './components/WordleDisplay';
+
+//const initSqlJs = require('./sql.js');
+
+
+
+
 
 
 function App() {
 
   return (
-    <div class="App">
+    <div className="App">
       <Nav />
       <Gallery />
-     
-      
     </div>
   );
 }

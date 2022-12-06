@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { spring, Motion, presets } from "react-motion";
 import "./Scroller.css";
+import Scores from "../scores.json";
 
 // Listen for when component scrolls ouside parent scope
 // Reference: https://medium.com/the-non-traditional-developer/how-to-use-an-intersectionobserver-in-a-react-hook-9fb061ac6cb5
@@ -30,14 +31,14 @@ const useIntersect = ({ root = null, rootMargin, threshold = 0 }) => {
 // Generate collection
 const generate = (v) => Array.from(Array(v), (_, x) => x);
 
-const Box = ({ root }) => {
+const Box = ({ root, scoreObj }) => {
 	const [ref, entry] = useIntersect({ root, threshold: 0.5 });
-	console.log(entry.intersectionRatio);
 	const inView = entry.intersectionRatio >= 0.5;
 	const styles = {
 		opacity: spring(inView ? 1 : 0, presets.stiff),
 		scale: spring(inView ? 1 : 0.8, presets.wobbly),
 	};
+
 	return (
 		<Motion defaultStyle={{ opacity: 0, scale: 0 }} style={styles}>
 			{({ opacity, scale }) => (
@@ -46,7 +47,7 @@ const Box = ({ root }) => {
 						className="box__inner"
 						style={{ transform: `scale(${scale})` }}
 					>
-						<h2 className="box__heading">Option</h2>
+						<h2 className="box__heading">{scoreObj.wordle}</h2>
 					</div>
 				</div>
 			)}
@@ -57,10 +58,11 @@ const Box = ({ root }) => {
 const Scroller = () => {
 	const newlist = generate(50);
 	const ref = useRef(null);
+	console.log(Scores[0]);
 	return (
 			<div ref={ref} className="scroller">
-				{newlist.map((k) => (
-					<Box key={k} root={ref} />
+				{Scores.map((k) => (
+					<Box key={k} root={ref} scoreObj={k}/>
 				))}
 			</div>
 	);

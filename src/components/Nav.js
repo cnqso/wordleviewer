@@ -4,16 +4,16 @@ import './Nav.css';
 const Nav = () => {
 	return (
 		<nav>
-			<div class="indexy2">
+			<div className="indexy2">
 				<a href="https://www.google.com/">Home</a>
 			</div>
-			<div class="indexy2">
+			<div className="indexy2">
 				<a href="https://www.google.com/">Second</a>
 			</div>
-			<div class="indexy2">
+			<div className="indexy2">
 				<a href="https://www.google.com/">Third</a>
 			</div>
-			<div class="indexy2">
+			<div className="indexy2">
 				<a href="https://www.google.com/">Fourth</a>
 			</div>
 		</nav>

@@ -2,13 +2,12 @@ import React from 'react';
 import "./WordleDisplay.css";
 
 
-
 let letters = document.getElementsByClassName("wordle-char");
 let revealed = 0;
 
 
 function Begin() {
-  setTimeout(Reveal, 150);
+  setTimeout(Reveal, 100);
 }
 
 function Reveal() {
@@ -19,7 +18,6 @@ function Reveal() {
     console.log(revealed);
      
     if (revealed >= letters.length) return;
-    
     Begin();  
   }
 
@@ -51,23 +49,15 @@ function Reveal() {
     }
   }
 
-function WordleDisplay () {
-    Begin();
+function WordleDisplay (props) {
+  var text = ["text1", "tex2", "text3", "text4"];
+  Begin();
     return (
         <div>
-            <div class="wordledisplay" onClick={Begin}>
-            <span class="wordle-char .reveal">K</span>
-            <span class="wordle-char .reveal ">E</span>
-            <span class="wordle-char ">L</span>
-            <span class="wordle-char  ">L</span>
-            <span class="wordle-char ">Y</span>
-            <span class="wordle-char ">K</span>
-            <span class="wordle-char ">E</span>
-            <span class="wordle-char ">L</span>
-            <span class="wordle-char  ">L</span>
-            <span class="wordle-char ">Y</span>
-        </div>
-        </div>
+            <div id="wrapper" className="wordledisplay">
+              {props.data.map(el => <span onClick={Begin} id={el} className="wordle-char">{el}</span>)}
+      </div>
+      </div>
     )
 }
 

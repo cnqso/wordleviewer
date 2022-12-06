@@ -5,7 +5,7 @@ import Scroller from './Scroller';
 
 function Gallery () {
     return (
-        <div class="gallery">
+        <div className="gallery">
             <Scroller/>
             <Display/>
         </div>
