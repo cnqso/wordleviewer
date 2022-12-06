@@ -2,8 +2,13 @@ import React from 'react';
 import "./WordleDisplay.css";
 
 
-let letters = document.getElementsByClassName("wordle-char");
-let revealed = 0;
+
+
+function WordleDisplay (props) {
+
+  let letters = document.getElementsByClassName("wordle-char");
+  let revealed = 0;
+  const example = "012010120101201012010120101201012010120101201012010120101201"
 
 
 function Begin() {
@@ -15,7 +20,6 @@ function Reveal() {
     let temp = revealed;
     setTimeout(() => UpdateColor(temp, letters), 250);
     revealed += 1;
-    console.log(revealed);
      
     if (revealed >= letters.length) return;
     Begin();  
@@ -23,17 +27,18 @@ function Reveal() {
 
 
   function UpdateColor(rev, letters) {
-    let rand = Math.floor(Math.random() * 3);
-    console.log(rand);
+    //let rand = props.dataObj.squares[rev];
+    //console.log(props.dataObj.squares[rev]);
+    let rand = example[rev]
     letters[rev].classList.remove(["blank", "green", "yellow"]);
   
-    if (rand === 0) {
+    if (rand === "2") {
         letters[rev].classList.add("green");      
     }
-    else if (rand === 1) {
+    else if (rand === "1") {
         letters[rev].classList.add("yellow");
     }
-    else if (rand === 2) {
+    else if (rand === "0") {
         letters[rev].classList.add("blank");
     }
   } 
@@ -49,14 +54,14 @@ function Reveal() {
     }
   }
 
-function WordleDisplay (props) {
-  var text = ["text1", "tex2", "text3", "text4"];
+
   Begin();
     return (
         <div>
             <div id="wrapper" className="wordledisplay">
-              {props.data.map(el => <span onClick={Begin} id={el} className="wordle-char">{el}</span>)}
+              {props.data.map((el, i) => <span key={i} onClick={Begin} id={el} className="wordle-char">{el}</span>)}
       </div>
+      <div>Wordle #{props.dataObj.wordle}</div>
       </div>
     )
 }

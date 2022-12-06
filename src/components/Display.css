@@ -1,6 +1,10 @@
-.boxy {
+.wordleBox {
   background-color: rgb(67, 26, 26);
-  flex: 50%;
+  flex: 100%;
   display:grid;
-  grid-template-columns: 20fr 1fr 20fr;
+  grid-template-columns: auto auto auto;
+}
+
+.allInformation {
+  /* overflow-y:scroll; */
 }

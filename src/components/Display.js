@@ -4,7 +4,19 @@ import WordleDisplay from "./WordleDisplay";
 
 
 
-function Display () {
+function Display (props) {
+
+
+    const momdata = {
+        squares: props.scoreObj.momsquares,
+        score: props.scoreObj.momscore,
+        time: props.scoreObj.momtime,
+        text: props.scoreObj.momfulltext,
+        wordle: props.scoreObj.wordle
+
+
+    }
+
 
     const willwordle = ["K", "E", "L", "L", "Y", 
                         "K", "E", "L", "L", "Y", 
@@ -16,11 +28,18 @@ function Display () {
     const momwordle =  ["K", "E", "L", "L", "Y", 
                         "K", "E", "L", "L", "Y", 
                         "K", "E", "L", "L", "Y",];
-    return (
 
-    <div className="boxy">
-        <WordleDisplay data = {momwordle}/>
-        <WordleDisplay data = {willwordle}/>
+    return (
+    <div className="wordleBox">
+        <WordleDisplay
+            data = {momwordle}
+            dataObj = {momdata}
+        />
+        <WordleDisplay 
+            data = {willwordle}  
+            dataObj = {momdata}
+              
+        />
     </div>
     );
 }

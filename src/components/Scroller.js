@@ -31,13 +31,29 @@ const useIntersect = ({ root = null, rootMargin, threshold = 0 }) => {
 // Generate collection
 const generate = (v) => Array.from(Array(v), (_, x) => x);
 
-const Box = ({ root, scoreObj }) => {
+const Box = ({ root, scoreObj, propz, currentsel }) => {
+	const [textColor, setTextColor] = useState('white');
 	const [ref, entry] = useIntersect({ root, threshold: 0.5 });
 	const inView = entry.intersectionRatio >= 0.5;
 	const styles = {
 		opacity: spring(inView ? 1 : 0, presets.stiff),
 		scale: spring(inView ? 1 : 0.8, presets.wobbly),
 	};
+
+	const toggleColor = () => {
+		if (scoreObj.wordle === currentsel) {
+			setTextColor('#82ff77');
+		}
+		else {
+			setTextColor('white');
+		}
+	}
+
+	const handleOnClick = (event) => {
+		propz.onChange(scoreObj);
+		toggleColor();
+	}
+
 
 	return (
 		<Motion defaultStyle={{ opacity: 0, scale: 0 }} style={styles}>
@@ -46,8 +62,9 @@ const Box = ({ root, scoreObj }) => {
 					<div
 						className="box__inner"
 						style={{ transform: `scale(${scale})` }}
+						onClick={handleOnClick} 
 					>
-						<h2 className="box__heading">{scoreObj.wordle}</h2>
+						<h2 style={{color: textColor}} className="box__heading">{scoreObj.wordle}</h2>
 					</div>
 				</div>
 			)}
@@ -55,14 +72,22 @@ const Box = ({ root, scoreObj }) => {
 	);
 };
 
-const Scroller = () => {
+
+
+const Scroller = (props) => {
 	const newlist = generate(50);
 	const ref = useRef(null);
-	console.log(Scores[0]);
+	console.log(props);
 	return (
 			<div ref={ref} className="scroller">
-				{Scores.map((k) => (
-					<Box key={k} root={ref} scoreObj={k}/>
+				{Scores.map((k,i) => (
+					<Box 
+						key={k.wordle} 
+						root={ref} 
+						scoreObj={k} 
+						propz={props}
+						currentsel={props.selection}
+					/>
 				))}
 			</div>
 	);
