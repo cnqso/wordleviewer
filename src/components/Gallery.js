@@ -5,7 +5,7 @@ import Scroller from './Scroller';
 import Scores from '../scores.json';
 
 function Gallery () {
-    const [currentSelection, setCurrentSelection] = useState(Scores[0]); 
+    const [currentSelection, setCurrentSelection] = useState(Scores[7]); 
     const receiveScoresHandler = (event) => {
         setCurrentSelection(event);
     }

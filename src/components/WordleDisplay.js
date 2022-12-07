@@ -1,14 +1,19 @@
 import React from 'react';
 import "./WordleDisplay.css";
 
-
+// Make all wordle characters into seperate objects
+// Give props (Letter, Color, X axis, Y axis)
+// Rather than reloading all at once, send update message to each individually
+// Color + letter change occurs at point of y-axis=0, ezpz
+// Bottom ones are maybe always generated but are blank/invisible. Might make it look cleaner
+// Generate 4 arrays of all the stuff I want, do a map that is like props.squareColors.map(el, i) => 
+// <Square key: {i} color: {colors[i]} letter: {letters[i]} etc etc
 
 
 function WordleDisplay (props) {
 
   let letters = document.getElementsByClassName("wordle-char");
   let revealed = 0;
-  const example = "012010120101201012010120101201012010120101201012010120101201"
 
 
 function Begin() {
@@ -27,18 +32,16 @@ function Reveal() {
 
 
   function UpdateColor(rev, letters) {
-    //let rand = props.dataObj.squares[rev];
-    //console.log(props.dataObj.squares[rev]);
-    let rand = example[rev]
+    let rand = props.dataObj.squares[rev];
     letters[rev].classList.remove(["blank", "green", "yellow"]);
   
-    if (rand === "2") {
+    if (rand === "G") {
         letters[rev].classList.add("green");      
     }
-    else if (rand === "1") {
+    else if (rand === "Y") {
         letters[rev].classList.add("yellow");
     }
-    else if (rand === "0") {
+    else if (rand === "B") {
         letters[rev].classList.add("blank");
     }
   } 

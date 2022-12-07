@@ -32,7 +32,7 @@ const useIntersect = ({ root = null, rootMargin, threshold = 0 }) => {
 const generate = (v) => Array.from(Array(v), (_, x) => x);
 
 const Box = ({ root, scoreObj, propz, currentsel }) => {
-	const [textColor, setTextColor] = useState('white');
+	const [selected, setSelected] = useState(false);
 	const [ref, entry] = useIntersect({ root, threshold: 0.5 });
 	const inView = entry.intersectionRatio >= 0.5;
 	const styles = {
@@ -40,18 +40,17 @@ const Box = ({ root, scoreObj, propz, currentsel }) => {
 		scale: spring(inView ? 1 : 0.8, presets.wobbly),
 	};
 
-	const toggleColor = () => {
-		if (scoreObj.wordle === currentsel) {
-			setTextColor('#82ff77');
-		}
-		else {
-			setTextColor('white');
-		}
-	}
-
 	const handleOnClick = (event) => {
 		propz.onChange(scoreObj);
-		toggleColor();
+	}
+
+	const checkIfSelected = () => {
+		if (scoreObj.wordle === currentsel) {
+			return "#6ada64";
+		}
+		else {
+			return "white";
+		}
 	}
 
 
@@ -64,7 +63,7 @@ const Box = ({ root, scoreObj, propz, currentsel }) => {
 						style={{ transform: `scale(${scale})` }}
 						onClick={handleOnClick} 
 					>
-						<h2 style={{color: textColor}} className="box__heading">{scoreObj.wordle}</h2>
+						<h2 style={{color: checkIfSelected()}} className="box__heading">{scoreObj.wordle}</h2>
 					</div>
 				</div>
 			)}
