@@ -13,7 +13,6 @@ function Display (props) {
         time: props.scoreObj.momtime,
         text: props.scoreObj.fulltextmom,
         wordle: props.scoreObj.wordle,
-        location: "wordle-char1"
     }
 
     let willdata = {
@@ -22,34 +21,33 @@ function Display (props) {
         time: props.scoreObj.willtime,
         text: props.scoreObj.fulltextwill,
         wordle: props.scoreObj.wordle,
-        location: "wordle-char2"
     }
 
 
     //Generating the arrays of the text we want displayed
     const answer = props.scoreObj.solution;
     let willempties = [];
-    let willwordle = Array(willdata.score).fill([answer[0],answer[1],answer[2],answer[3],answer[4]]).flat();
-    willempties = Array(6-(willwordle.length/5)).fill(["","","","",""]).flat();
+    let willwordle = Array(Math.min(willdata.score, 6)).fill([answer[0],answer[1],answer[2],answer[3],answer[4]]).flat();
+    willempties = Array(6-(Math.min(willwordle.length/5, 6))).fill(["","","","",""]).flat(); 
     willwordle = willwordle.concat(willempties);
     
     let momempties = [];
-    let momwordle = Array(momdata.score).fill([answer[0],answer[1],answer[2],answer[3],answer[4]]).flat();
-    momempties = Array(6-(momwordle.length/5)).fill(["","","","",""]).flat();
+    let momwordle = Array(Math.min(momdata.score, 6)).fill([answer[0],answer[1],answer[2],answer[3],answer[4]]).flat();
+    console.log(momdata.score)
+    momempties = Array(6-(Math.min(momwordle.length/5, 6))).fill(["","","","",""]).flat(); 
     momwordle = momwordle.concat(momempties);
 
     return (
-    <div className="wordleBox">
-        <WordleDisplay
-            letters = {momwordle}
-            dataObj = {momdata}
-        />
-        <WordleDisplay 
-            letters = {willwordle}  
-            dataObj = {willdata}
-              
-        />
-    </div>
+        <div className="wordleBox">
+            <WordleDisplay
+                letters = {momwordle}
+                dataObj = {momdata}
+            />
+            <WordleDisplay 
+                letters = {willwordle}  
+                dataObj = {willdata}
+            />
+        </div>
     );
 }
 
