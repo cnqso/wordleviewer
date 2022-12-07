@@ -6,42 +6,46 @@ import WordleDisplay from "./WordleDisplay";
 
 function Display (props) {
 
-    const totalLengthCalc = (props.scoreObj.momscore * 5) + (props.scoreObj.willscore * 5)
 
-    const momdata = {
+    let momdata = {
         squares: props.scoreObj.momsquares,
         score: props.scoreObj.momscore,
         time: props.scoreObj.momtime,
-        text: props.scoreObj.momfulltext,
+        text: props.scoreObj.fulltextmom,
         wordle: props.scoreObj.wordle,
-        totalLength: totalLengthCalc,
         location: "wordle-char1"
     }
 
-    const willdata = {
+    let willdata = {
         squares: props.scoreObj.willsquares,
         score: props.scoreObj.willscore,
         time: props.scoreObj.willtime,
-        text: props.scoreObj.willfulltext,
+        text: props.scoreObj.fulltextwill,
         wordle: props.scoreObj.wordle,
-        totalLength: totalLengthCalc,
         location: "wordle-char2"
     }
 
 
-    
+    //Generating the arrays of the text we want displayed
     const answer = props.scoreObj.solution;
-    const willwordle = Array(willdata.score).fill([answer[0],answer[1],answer[2],answer[3],answer[4]]).flat();
-    const momwordle = Array(momdata.score).fill([answer[0],answer[1],answer[2],answer[3],answer[4]]).flat();
+    let willempties = [];
+    let willwordle = Array(willdata.score).fill([answer[0],answer[1],answer[2],answer[3],answer[4]]).flat();
+    willempties = Array(6-(willwordle.length/5)).fill(["","","","",""]).flat();
+    willwordle = willwordle.concat(willempties);
+    
+    let momempties = [];
+    let momwordle = Array(momdata.score).fill([answer[0],answer[1],answer[2],answer[3],answer[4]]).flat();
+    momempties = Array(6-(momwordle.length/5)).fill(["","","","",""]).flat();
+    momwordle = momwordle.concat(momempties);
 
     return (
     <div className="wordleBox">
         <WordleDisplay
-            data = {momwordle}
+            letters = {momwordle}
             dataObj = {momdata}
         />
         <WordleDisplay 
-            data = {willwordle}  
+            letters = {willwordle}  
             dataObj = {willdata}
               
         />

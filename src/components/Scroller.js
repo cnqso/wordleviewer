@@ -76,7 +76,6 @@ const Box = ({ root, scoreObj, propz, currentsel }) => {
 const Scroller = (props) => {
 	const newlist = generate(50);
 	const ref = useRef(null);
-	console.log(props);
 	return (
 			<div ref={ref} className="scroller">
 				{Scores.map((k,i) => (
