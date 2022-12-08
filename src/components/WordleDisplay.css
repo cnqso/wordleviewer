@@ -3,72 +3,12 @@
     grid-template-columns: auto auto auto auto auto;
     place-content: center;
     text-align: center;
-    font-size: calc(3vw);
+    font-size: calc(2.7vw);
     margin: 1vw;
 }
-
-.wordle-char {
-    width: 1em;
-    height: 1em;
-    display: grid;
-    place-content: center;
-    border: 2px solid #444;
-    padding: 0.5em;
-    margin: 0.1em;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-
-  .wordle-char2 {
-    width: 1em;
-    height: 1em;
-    display: grid;
-    place-content: center;
-    border: 2px solid #444;
-    padding: 0.5em;
-    margin: 0.1em;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-
-  .yellow {
-    background-color: #c9b458;
-    border-color: #c9b458;
-    color: #f0f0f0;
-  }
   
-  .green {
-    background-color: #6aaa64;
-    border-color: #6aaa64;
-    color: #f0f0f0;
-  }
-  
-  .blank {
-    color: #f0f0f0;
-  }
-  
-  .wordle-char:hover, .reveal {
-    animation-name: reveal;
-    animation-duration: .5s; 
-  }
-  
-  @keyframes reveal {
-    0% {
-      transform: scaleY(1);
-    }
-    50% {
-      transform: scaleY(.1); 
-    }
-    100% {
-      transform: scaleY(1);
-    }
-  }
+.break {
+  grid-column: 1 / 6;
+  height: 0.3em;
+}
   

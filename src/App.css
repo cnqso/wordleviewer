@@ -1,8 +1,10 @@
 .App {
   background-color: #282c34;
-  position: fixed;
   overflow: hidden;
-  width: 100vw;
-  height: 100vh;
+  position:absolute;
+  top:0px;
+  right:0px;
+  bottom:0px;
+  left:0px;
   font-size: calc(10px + 2vmin);
 }

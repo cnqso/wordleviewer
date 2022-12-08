@@ -57,8 +57,8 @@ const Box = ({ root, scoreObj, propz, currentsel }) => {
 	return (
 		<Motion defaultStyle={{ opacity: 0, scale: 0 }} style={styles}>
 			{({ opacity, scale }) => (
-				<motion.div whileHover={{ scale: 1.1 }}
-				whileTap={{ scale: 0.8 }}
+				<motion.div whileHover={{ scale: 1.05 }}
+				whileTap={{ scale: 0.9 }}
 				transition={{ type: "spring", stiffness: 400, damping: 17 }} className="box" ref={ref} style={{ opacity }}>
 					<div
 						className="box__inner"

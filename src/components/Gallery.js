@@ -22,6 +22,7 @@ function Gallery () {
                 onChange = {receiveScoresHandler}
             />
             <Display
+                key = {currentSelection}
                 scoreObj = {currentSelection}
                 visible = {showDisplay}
             />

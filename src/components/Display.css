@@ -1,10 +1,30 @@
-.wordleBox {
-  background-color: rgb(67, 26, 26);
-  flex: 100%;
-  display:grid;
-  grid-template-columns: auto auto auto;
+.wordleBox::-webkit-scrollbar {
+  display: none;
 }
 
+.wordleBox {
+  flex: 100%;
+  display:grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: max-content auto;
+  overflow-X:hidden;
+}
+
+#nohighlight {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.title {
+  grid-column: 1/3;
+  grid-row: 1;
+  font-size: calc(3vw);
+  text-align:center;
+}
 .allInformation {
   /* overflow-y:scroll; */
 }

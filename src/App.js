@@ -4,14 +4,13 @@ import Gallery from './components/Gallery';
 import Nav from './components/Nav';
 
 
-
-
-//Then, change the python string to output 012 instead of emojis
-//After that it's pretty straight shooting. The button thing will be a pain in the ass tho
-//Last, make the wordles reload upon a new selection
-
-
-
+//TODO
+//Display date above the first message
+//Change python code to represent emojis correctly in the JSON
+//Make sure it is possible to scroll all the way to the bottom
+//Implement Home, Analytics, and About pages
+//Clean up all the pages, reorganize
+//Give credit to all modules taken from or based on others
 
 function App() {
 
