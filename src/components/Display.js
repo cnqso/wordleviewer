@@ -43,15 +43,33 @@ function Display (props) {
 
     return (
         <div className="wordleBox">
-           {props.visible ? (<><WordleDisplay
+            <WordleDisplay
+                key = {props.scoreObj.wordle}
                 letters = {momwordle}
                 dataObj = {momdata}
             />
             <WordleDisplay 
+                key = {props.scoreObj.wordle*2}
                 letters = {willwordle}  
-                dataObj = {willdata} /></>) : null}
+                dataObj = {willdata} 
+             />
         </div>
     );
 }
 
 export default Display;
+
+
+// {props.visible ? (<><WordleDisplay
+//     letters = {momwordle}
+//     dataObj = {momdata}
+// />
+// <WordleDisplay 
+//     letters = {willwordle}  
+//     dataObj = {willdata} /></>) : (<><WordleDisplay
+//         letters = {momwordle}
+//         dataObj = {momdata}
+//     />
+//     <WordleDisplay 
+//         letters = {willwordle}  
+//         dataObj = {willdata} /></>)}

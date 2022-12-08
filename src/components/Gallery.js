@@ -9,8 +9,7 @@ function Gallery () {
     const [currentSelection, setCurrentSelection] = useState(Scores[0]); 
     const receiveScoresHandler = (event) => {
         setCurrentSelection(event);
-        setShowDisplay(false);
-        setTimeout(() => setShowDisplay(true));
+        //setShowDisplay(!showDisplay);
     }
 
 //Check out useEffect because that might be the key

@@ -21,8 +21,5 @@ nav {
 a {
     color: white;
     text-decoration:none;
-}
-.indexy2:hover{
-    background-color: #223353;
-    transition: linear 0.2s;
+    padding: 10%;
 }

@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { spring, Motion, presets } from "react-motion";
+import {motion} from 'framer-motion';
 import "./Scroller.css";
 import Scores from "../scores.json";
 
@@ -56,7 +57,9 @@ const Box = ({ root, scoreObj, propz, currentsel }) => {
 	return (
 		<Motion defaultStyle={{ opacity: 0, scale: 0 }} style={styles}>
 			{({ opacity, scale }) => (
-				<div className="box" ref={ref} style={{ opacity }}>
+				<motion.div whileHover={{ scale: 1.1 }}
+				whileTap={{ scale: 0.8 }}
+				transition={{ type: "spring", stiffness: 400, damping: 17 }} className="box" ref={ref} style={{ opacity }}>
 					<div
 						className="box__inner"
 						style={{ transform: `scale(${scale})` }}
@@ -64,7 +67,7 @@ const Box = ({ root, scoreObj, propz, currentsel }) => {
 					>
 						<h2 style={{color: checkIfSelected()}} className="box__heading">{scoreObj.wordle}</h2>
 					</div>
-				</div>
+				</motion.div>
 			)}
 		</Motion>
 	);

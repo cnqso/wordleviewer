@@ -1,21 +1,38 @@
 import React from "react";
 import './Nav.css';
+import {motion} from 'framer-motion';
 
 const Nav = () => {
 	return (
 		<nav>
-			<div className="indexy2">
+			<motion.div 
+				whileHover={{ scale: 1.1 }}
+				whileTap={{ scale: 0.9 }}
+				transition={{ type: "linear", stiffness: 400, damping: 17 }}
+				className="indexy2">
 				<a href="https://www.google.com/">Home</a>
-			</div>
-			<div className="indexy2">
+			</motion.div>
+			<motion.div 
+				whileHover={{ scale: 1.1 }}
+				whileTap={{ scale: 0.9 }}
+				transition={{ type: "spring", stiffness: 400, damping: 17 }}
+				className="indexy2">
 				<a href="https://www.google.com/">Second</a>
-			</div>
-			<div className="indexy2">
+			</motion.div>
+			<motion.div 
+				whileHover={{ scale: 1.1 }}
+				whileTap={{ scale: 0.9 }}
+				transition={{ type: "spring", stiffness: 400, damping: 17 }}
+				className="indexy2">
 				<a href="https://www.google.com/">Third</a>
-			</div>
-			<div className="indexy2">
+			</motion.div>
+			<motion.div 
+				whileHover={{ scale: 1.1 }}
+				whileTap={{ scale: 0.9 }}
+				transition={{ type: "spring", stiffness: 400, damping: 17 }}
+				className="indexy2">
 				<a href="https://www.google.com/">Fourth</a>
-			</div>
+			</motion.div>
 		</nav>
 	);
 };

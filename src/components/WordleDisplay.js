@@ -1,31 +1,40 @@
 import React, { useState, useRef, useEffect } from "react";
-import {motion} from 'framer-motion';
+import {motion, AnimatePresence} from 'framer-motion';
 import "./WordleDisplay.css";
-
-//import ReactCSSTransitionGroup from 'react-transition-group';
 import './WordleChar.css';
-import Scroller from "./Scroller";
 
 
 
 //Animation on the way out that squishes- animation on the way in that expands
 function WordleChar (props) {
-
-  let [squareProperties, setSquareProperties] = useState(props.letter)
-
   let id=props.id;
   let letter=props.letter ;
   let color=props.color;
   let xposition=props.xposition;
   let yposition=props.yposition;
+
+
+
   return (
+    <AnimatePresence>
+      {(id === props.id)} && (
       <motion.span layout
-      animate={{
-          scaleY: [null, 0.02, 1]
+        initial={{ scaleY:0}}
+        animate={{ scaleY: 1}}
+        exit={{scaleY: 0}}
+        transition = {{duration: 0.2, delay: xposition*0.03+yposition*0.08}}
+        drag
+        dragConstraints={{
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
         }}
-          className={color}> 
+        className={color}> 
           {letter} 
       </motion.span>
+      )
+    </AnimatePresence>
   );
 }
 
@@ -93,6 +102,7 @@ function checkIfNull(playerScore) {
     score = props.dataObj.score.toString();
   }
 }
+
 
 checkIfNull(props.dataObj.score);
 const ref = useRef(null);
