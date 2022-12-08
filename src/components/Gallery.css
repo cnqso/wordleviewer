@@ -2,7 +2,7 @@
     margin: auto;
     background-color: #282c34;
     color: white;
-    overflow-x: hidden;
+    overflow: hidden;
     overflow-wrap: break-word;
     width: 100%;
     height: 100%;
