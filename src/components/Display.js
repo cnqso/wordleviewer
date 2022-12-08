@@ -33,20 +33,23 @@ function Display (props) {
     
     let momempties = [];
     let momwordle = Array(Math.min(momdata.score, 6)).fill([answer[0],answer[1],answer[2],answer[3],answer[4]]).flat();
-    console.log(momdata.score)
     momempties = Array(6-(Math.min(momwordle.length/5, 6))).fill(["","","","",""]).flat(); 
     momwordle = momwordle.concat(momempties);
 
+
+    
+
+
+
     return (
         <div className="wordleBox">
-            <WordleDisplay
+           {props.visible ? (<><WordleDisplay
                 letters = {momwordle}
                 dataObj = {momdata}
             />
             <WordleDisplay 
                 letters = {willwordle}  
-                dataObj = {willdata}
-            />
+                dataObj = {willdata} /></>) : null}
         </div>
     );
 }

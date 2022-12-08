@@ -1,10 +1,18 @@
 import React, { useState, useRef, useEffect } from "react";
 import { spring, Motion, presets } from "react-motion";
-import ReactCSSTransitionGroup from 'react-transition-group';
+import {motion} from 'framer-motion';
+//import ReactCSSTransitionGroup from 'react-transition-group';
 import './WordleChar.css';
 
 
 function WordleChar (props) {
+    // const [squareProperties, setX] = useState(""); 
+    // // const receiveXHandler = (event) => {
+    // //     setX(event);
+    // // }
+    
+    const [squareProperties, setSquareProperties] = useState("t");
+
     
     const styles = {
 		opacity: spring(1 ? 1 : 0, presets.stiff),
@@ -16,12 +24,17 @@ function WordleChar (props) {
     let color=props.color;
     let xposition=props.xposition;
     let yposition=props.yposition;
+    setSquareProperties(props.letter);
+    console.log(squareProperties);
 
     return (
-        <span className={color}>
-            
-            {letter}
-        </span>
+        <motion.span layout
+        animate={{
+            scaleY: [null, 0.02, 1]
+          }}
+            className={color}> 
+            {squareProperties} 
+        </motion.span>
     );
 }
 
@@ -30,7 +43,6 @@ function WordleChar (props) {
 
 
 export default WordleChar;
-
 
 
 

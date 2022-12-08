@@ -1,22 +1,42 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from "react";
+import {motion} from 'framer-motion';
 import "./WordleDisplay.css";
-import WordleChar from './WordleChar';
 
-// Make all wordle characters into seperate objects
-// Give props (Letter, Color, X axis, Y axis)
-// Rather than reloading all at once, send update message to each individually
-// Color + letter change occurs at point of y-axis=0, ezpz
-// Bottom ones are maybe always generated but are blank/invisible. Might make it look cleaner
-// Generate 4 arrays of all the stuff I want, do a map that is like props.squareColors.map(el, i) => 
-// <Square key: {i} color: {colors[i]} letter: {letters[i]} etc etc
+//import ReactCSSTransitionGroup from 'react-transition-group';
+import './WordleChar.css';
+import Scroller from "./Scroller";
+
+
 
 //Animation on the way out that squishes- animation on the way in that expands
+function WordleChar (props) {
+
+  let [squareProperties, setSquareProperties] = useState(props.letter)
+
+  let id=props.id;
+  let letter=props.letter ;
+  let color=props.color;
+  let xposition=props.xposition;
+  let yposition=props.yposition;
+  return (
+      <motion.span layout
+      animate={{
+          scaleY: [null, 0.02, 1]
+        }}
+          className={color}> 
+          {letter} 
+      </motion.span>
+  );
+}
+
 
 
 function WordleDisplay (props) {
   let letters = props.letters;
   let colors = props.dataObj.squares;
   let score = "";
+
+
 
 //   let letters = document.getElementsByClassName("wordle-char");
 //   let revealed = 0;
@@ -72,7 +92,6 @@ function checkIfNull(playerScore) {
   } else {
     score = props.dataObj.score.toString();
   }
-
 }
 
 checkIfNull(props.dataObj.score);
@@ -100,3 +119,5 @@ const ref = useRef(null);
 
 
 export default WordleDisplay;
+
+

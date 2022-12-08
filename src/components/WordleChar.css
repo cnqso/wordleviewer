@@ -20,37 +20,25 @@ span {
     background-color: #c9b458;
     border-color: #c9b458;
     color: #f0f0f0;
-    animation-name: reveal;
-    animation-duration: .5s; 
   }
   
   .G {
     background-color: #6aaa64;
     border-color: #6aaa64;
     color: #f0f0f0;
-    animation-name: reveal;
-    animation-duration: .5s; 
   }
   
   .B {
     background-color: #373837;
     border-color: #444444;
     color: #f0f0f0;
-    animation-name: reveal;
-    animation-duration: .5s; 
   }
 
   .D {
     color : "black";
-    animation-name: reveal;
-    animation-duration: .5s; 
   }
   
-  .wordle-char:hover, .reveal {
-    animation-name: reveal;
-    animation-duration: .5s; 
-  }
-  
+
   @keyframes reveal {
     0% {
       transform: scaleY(1);

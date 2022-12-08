@@ -32,7 +32,6 @@ const useIntersect = ({ root = null, rootMargin, threshold = 0 }) => {
 const generate = (v) => Array.from(Array(v), (_, x) => x);
 
 const Box = ({ root, scoreObj, propz, currentsel }) => {
-	const [selected, setSelected] = useState(false);
 	const [ref, entry] = useIntersect({ root, threshold: 0.5 });
 	const inView = entry.intersectionRatio >= 0.5;
 	const styles = {

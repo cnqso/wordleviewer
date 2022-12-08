@@ -5,13 +5,16 @@ import Scroller from './Scroller';
 import Scores from '../scores.json';
 
 function Gallery () {
-    const [currentSelection, setCurrentSelection] = useState(Scores[7]); 
+    const [showDisplay, setShowDisplay] = useState(true);
+    const [currentSelection, setCurrentSelection] = useState(Scores[0]); 
     const receiveScoresHandler = (event) => {
         setCurrentSelection(event);
+        setShowDisplay(false);
+        setTimeout(() => setShowDisplay(true));
     }
 
-    
-
+//Check out useEffect because that might be the key
+//Otherwise lock the vw of the scrollbar
 
     return (
         <div className="gallery">
@@ -21,6 +24,7 @@ function Gallery () {
             />
             <Display
                 scoreObj = {currentSelection}
+                visible = {showDisplay}
             />
         </div>
     );
