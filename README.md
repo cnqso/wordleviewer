@@ -1,70 +1,49 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Wordle Viewer is a Christmas gift which takes in an iPhone backup and displays all sent or received Wordle scores in one text conversation. The display is built with React, and the "backend" is a Python script with SQLite and JSON libraries. 
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+### Gallery
+The gallery gives a scrollable list of all visualization options which sends data to the display component on the right. The component visualizes that data using 
 
-### `npm start`
+### Stats
+Nothing notable here, just some math run on the data
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Backup to Wordle data
+The Python script first runs through the user's iMessage SQLite database to find all texts from the desired recipient which contain the unbroken strings "Wordle" and "/6" and which do not begin with a reaction message (Liked, Emphasized, Laughed at, etc). It then organizes the date, wordle sequence, score, and full text of each player in an SQL database. Each row is organized by the Wordle number, and the correct answer for each day is grabbed from a seperate JSON I organized. The script outputs the completed data in .db and .json formats.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Demo
 
-### `npm test`
+Forthcoming
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Customizing
 
-### `npm run build`
+To use your own wordle scores, you need:
+* An unencrypted iPhone backup (Accomplishable via iTunes or a 3rd-party alternative like (iMazing)[https://imazing.com/]). It will almost certainly be named "3d0d7e5fb2ce288813306e4d4636395e047a3d28.db". Search this file name in your appdata (PC) or your Application Support (Mac) folder.
+* A way of reading SQLite data ([I used DB Browser][https://sqlitebrowser.org/])
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Place your text backup file it in the "SQLWordle" folder.
+2. Find the handle_id of the conversation you're interested in. This will be in the "messages" table of your text backup. If you're having trouble, try searching strings from texts you have exchanged with this person.
+3. Run the python script. It will output a file called "wordleScores.db" and "wordleScores.json".
+4. Place "wordleScores.json" into the "src" folder of wordleviewer
+5. Launch the app via the index.html file!
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+If anything doesn't work perfectly right out of the box, please let me know. 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Plan to implement
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* Finish the webapp and upload a python script with an anonymized example file.
+* Integrate the python script and react app in a more "plug and play" way.
+* A feature in the Python script which "guesses" at the words users would have guessed using word frequency analysis and word biases (consistent starting words, consistent second words, etc.)
+* A feature in the python script which allows users to enter a phone number rather than a handle id, which would allow a better "plug and play" experience.
+* Codepen-friendly showcases of the animations and CFAbsolute Time -> Date modules
+* An automatically updating and publicly accessible database of all wordle answers in JSON, .db, CSV, and text formats (somehow was not able to find anything other than plaintext websites).
+* Automatic database updating functionality (longshot).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## License
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+None, do whatever you want.

@@ -5,7 +5,7 @@
     overflow: hidden;
     overflow-wrap: break-word;
     position:absolute;
-    top: 6.5vmax;
+    top: calc(4vh + 3vmin);
     right:0px;
     bottom:0px;
     left:0px;

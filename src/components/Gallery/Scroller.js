@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
 import { spring, Motion, presets } from "react-motion";
 import {motion} from 'framer-motion';
 import "./Scroller.css";
-import Scores from "../scores.json";
+import Scores from "../../wordleScores.json";
 
 // Listen for when component scrolls ouside parent scope
 // Reference: https://medium.com/the-non-traditional-developer/how-to-use-an-intersectionobserver-in-a-react-hook-9fb061ac6cb5
@@ -76,7 +76,6 @@ const Box = ({ root, scoreObj, propz, currentsel }) => {
 
 
 const Scroller = (props) => {
-	const newlist = generate(50);
 	const ref = useRef(null);
 	return (
 			<div ref={ref} className="scroller">
