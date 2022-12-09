@@ -3,18 +3,22 @@ import './About.css';
 
 const LoremIpsumPage = () => {
   return (
-    <main className = "about">
-      <h1>About</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </p>
-    </main>
+    <div className = "about">
+        <main>
+            <p> <a style={{color: "#d0ffcc"}} href="https://github.com/cnqso/wordleviewer">About</a></p>
+            <p className="right">
+                This website is a Christmas gift. It receives 
+                an iPhone backup and displays all sent or 
+                received Wordle scores found in one text conversation. 
+                The display is built with React, and the "backend" 
+                is a Python script with SQLite and JSON libraries. <br></br>
+                <a style={{color: "#d0ffcc"}} href="https://github.com/cnqso"> Github </a>
+                <a style={{color: "#d0ffcc"}} href="mailto:WiMiKelly@gmail.com"> Email </a>
+                <a style={{color: "#d0ffcc"}} href="https://twitter.com/cnqso"> Twitter </a> 
+                <a style={{color: "#d0ffcc"}} href="https://github.com/cnqso"> Codepen </a>
+            </p>
+        </main>
+    </div>
   );
 };
 
