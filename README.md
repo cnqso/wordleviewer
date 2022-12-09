@@ -20,8 +20,8 @@ Forthcoming
 ## Customizing
 
 To use your own wordle scores, you need:
-* An unencrypted iPhone backup (Accomplishable via iTunes or a 3rd-party alternative like (iMazing)[https://imazing.com/]). It will almost certainly be named "3d0d7e5fb2ce288813306e4d4636395e047a3d28.db". Search this file name in your appdata (PC) or your Application Support (Mac) folder.
-* A way of reading SQLite data ([I used DB Browser][https://sqlitebrowser.org/])
+* An unencrypted iPhone backup (Accomplishable via iTunes or a 3rd-party alternative like [iMazing](https://imazing.com/)). It will almost certainly be named "3d0d7e5fb2ce288813306e4d4636395e047a3d28.db". Search this file name in your appdata (PC) or your Application Support (Mac) folder.
+* A way of reading SQLite data ([I used DB Browser](https://sqlitebrowser.org/))
 
 1. Place your text backup file it in the "SQLWordle" folder.
 2. Find the handle_id of the conversation you're interested in. This will be in the "messages" table of your text backup. If you're having trouble, try searching strings from texts you have exchanged with this person.
