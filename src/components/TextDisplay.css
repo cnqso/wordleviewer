@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   font-family: "SanFrancisco";
-  font-size: 1.25rem;
+  font-size: calc(1.2vmin + 2.5vw);
   margin: 0 auto 1rem;
   max-width: 100%;
   padding: 0.5rem 1.5rem;
@@ -49,9 +49,11 @@ p.from-me::after {
   width: 10px;
 }
 
+
+/* This is the width value that actually matters */
 p[class^="from-"] {
   margin: 0.5rem 0;
-  width: fit-content;
+  width: calc(6em + 10vw);
 }
 
 p.from-me ~ p.from-me {
@@ -70,6 +72,7 @@ p.from-them {
   align-items: flex-start;
   background-color: #e5e5ea;
   color: #000;
+  text-align: left;
 }
 
 p.from-them:before {
@@ -133,24 +136,3 @@ p[class^="from-"].emoji::before {
     url("https://cdn.rawgit.com/AllThingsSmitty/fonts/25983b71/SanFrancisco/sanfranciscodisplay-regular-webfont.woff") format("woff");
 }
 
-
-@media screen and (max-width: 800px) {
-  body {
-    margin: 0 0.5rem;
-  }
-
-  .container {
-    padding: 0.5rem;
-  }
-
-  .imessage {
-    font-size: 1.05rem;
-    margin: 0 auto 1rem;
-    max-width: 70vw;
-    padding: 0.25rem 0.875rem;
-  }
-
-  .imessage p {
-    margin: 0.5rem 0;
-  }
-}

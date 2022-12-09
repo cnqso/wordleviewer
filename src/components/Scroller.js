@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
 import { spring, Motion, presets } from "react-motion";
 import {motion} from 'framer-motion';
 import "./Scroller.css";
@@ -34,6 +34,7 @@ const generate = (v) => Array.from(Array(v), (_, x) => x);
 
 const Box = ({ root, scoreObj, propz, currentsel }) => {
 	const [ref, entry] = useIntersect({ root, threshold: 0.5 });
+
 	const inView = entry.intersectionRatio >= 0.5;
 	const styles = {
 		opacity: spring(inView ? 1 : 0, presets.stiff),
@@ -52,7 +53,6 @@ const Box = ({ root, scoreObj, propz, currentsel }) => {
 			return "white";
 		}
 	}
-
 
 	return (
 		<Motion defaultStyle={{ opacity: 0, scale: 0 }} style={styles}>

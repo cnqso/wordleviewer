@@ -27,12 +27,12 @@ function checkIfNull(playerScore) {
   }
 }
 
-  let color = "B"
-  if (props.dataObj.winloss === "win") {
-    color = "G"
-  } else if (props.dataObj.winloss === "lose"){
-    color = "Y"
-  }
+let color = "B"
+if (props.dataObj.winloss === "win") {
+  color = "G"
+} else if (props.dataObj.winloss === "lose"){
+  color = "Y"
+}
 
 
 checkIfNull(props.dataObj.score);
@@ -64,7 +64,7 @@ const ref = useRef(null);
             yposition = {7}
           />
           <WordleChar 
-            key = {1000}
+            key = {1001}
             id = {1}
             letter = {"/"}  
             color = {color}
@@ -72,7 +72,7 @@ const ref = useRef(null);
             yposition = {7}
           />
           <WordleChar 
-            key = {1000}
+            key = {1002}
             id = {1}
             letter = {"6"}  
             color = {color}

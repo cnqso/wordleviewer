@@ -7,11 +7,18 @@ let bottom = "from-them";
 let toptext = props.willtext;
 let bottomtext=props.momtext;
 
+
 if (props.momtime < props.willtime | props.willtime === null) {
     top="from-them";
     toptext=props.momtext;
     bottom="from-me";
     bottomtext=props.willtext;
+}
+if (props.momtime === null) {
+    top = "from-me";
+    bottom = "from-them";
+    toptext = props.willtext;
+bottomtext=props.momtext;
 }
 
 function twoMessages () {
@@ -21,9 +28,13 @@ function twoMessages () {
     return true;
 }
 
-
+const styles = {
+    imessage: {
+        whiteSpace: "pre-wrap"
+    }
+};
     return (
-<div class="imessage">
+<div className="imessage" style={styles.imessage}>
     <p className={top}>{toptext}</p>
    {twoMessages() && <p className={bottom}>{bottomtext}</p>}
     </div>

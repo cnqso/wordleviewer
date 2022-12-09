@@ -6,8 +6,8 @@
   flex: 100%;
   display:grid;
   grid-template-columns: auto auto;
-  grid-template-rows: max-content auto;
-  overflow-X:hidden;
+  grid-template-rows: max-content max-content;
+  overflow-X: hidden;
 }
 
 #nohighlight {
@@ -22,6 +22,6 @@
 .title {
   grid-column: 1/3;
   grid-row: 1;
-  font-size: calc(3vw);
+  font-size: calc(1vmax + 2.4vw);
   text-align:center;
 }

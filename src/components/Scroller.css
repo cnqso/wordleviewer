@@ -5,7 +5,7 @@
 
   .scroller {
     overflow-y: scroll;
-    flex: 15%;
+    flex: 20%;
     height: 100%;
     position:relative;
     float:left;

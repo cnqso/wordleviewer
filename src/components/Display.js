@@ -46,15 +46,17 @@ function Display (props) {
     momempties = Array(6-(Math.min(momwordle.length/5, 6))).fill(["","","","",""]).flat(); 
     momwordle = momwordle.concat(momempties);
 
-
-    if (momdata.score < willdata.score | willdata.score === null) {
-        momdata.winloss = "win"
-        willdata.winloss = "lose"
-    } else if (momdata.score > willdata.score | momdata.score === null) {
-        willdata.winloss = "win"
-        momdata.winloss = "lose"
+    if (momdata.score < willdata.score && momdata.score != null) {
+        momdata.winloss = "win";
+        willdata.winloss = "lose";
+    } else if (momdata.score > willdata.score && willdata.score != null) {
+        willdata.winloss = "win";
+        momdata.winloss = "lose";
+    } else if (momdata.score === null) {
+        willdata.winloss = "win";
+    } else if (willdata.score === null) {
+        momdata.winloss = "win";
     }
-  
 
 
 
@@ -71,12 +73,13 @@ function Display (props) {
                 letters = {willwordle}  
                 dataObj = {willdata} 
              />
-             <TextDisplay
+            <TextDisplay
                 momtime = {momdata.time}
                 willtime = {willdata.time}
                 momtext = {momdata.text}
-                willtext = {willdata.text}/>
-             
+                willtext = {willdata.text}
+            />
+            {/* <br style={{margin: "250px"}}></br> */}
         </div>
     );
 }

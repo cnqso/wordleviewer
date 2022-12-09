@@ -3,7 +3,7 @@
     grid-template-columns: auto auto auto auto auto;
     place-content: center;
     text-align: center;
-    font-size: calc(2.7vw);
+    font-size: calc(1.2vmin + 1.7vw);
     margin: 1vw;
 }
   
