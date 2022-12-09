@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Wordle Viewer
 
 Wordle Viewer is a Christmas gift which takes in an iPhone backup and displays all sent or received Wordle scores in one text conversation. The display is built with React, and the "backend" is a Python script with SQLite and JSON libraries. 
 
