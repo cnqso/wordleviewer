@@ -28,6 +28,8 @@ main::-webkit-scrollbar {
   }
 
 .right {
+    font-size: calc(3vh);
+    margin-right: 1vw;
     text-align: justify; 
     overflow-wrap: break-word;
     margin-right: 0;
@@ -36,28 +38,7 @@ main::-webkit-scrollbar {
 
 
 
-  p{
+.left{
     font-size: calc(3vh);
     margin-right: 1vw;
   }
-
-  p a {
-    color: "white";
-  }
-
-  .link {
-    /* color: "#d0ffcc"; */
-    color: "white";
-    
-    
-  }
-  .link:visited {
-    /* color: "#d0ffcc"; */
-   
-    
-    
-  }
-a:link { text-decoration: none; }
-a:visited { text-decoration: none; }
-a:hover { text-decoration: none; }
-a:active { text-decoration: none; }

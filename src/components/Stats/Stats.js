@@ -8,21 +8,19 @@ const Stats = () => {
   return (
     <div className = "about1">
         <main>
-            <p> Stats  </p>
-            <p className="right1">
-                Woooo
-            </p>
-            <p>Wordles sent:</p>
+            <p className="left1"> Stats  </p>
+            <p className="right1">Woooo</p>
+            <p className="left1">Wordles sent:</p>
             <p className="right1">{wordles}</p>
-            <p>Wordles sent:</p>
+            <p className="left1">Wordles sent:</p>
             <p className="right1">{wordles}</p>
-            <p>Wordles sent:</p>
+            <p className="left1">Wordles sent:</p>
             <p className="right1">{wordles}</p>
-            <p>Wordles sent:</p>
+            <p className="left1">Wordles sent:</p>
             <p className="right1">{wordles}</p>
-            <p>Wordles sent:</p>
+            <p className="left1">Wordles sent:</p>
             <p className="right1">{wordles}</p>
-            <p>Wordles sent:</p>
+            <p className="left1">Wordles sent:</p>
             <p className="right1">{wordles}</p>
         </main>
     </div>
