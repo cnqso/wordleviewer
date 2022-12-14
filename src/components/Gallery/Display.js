@@ -8,23 +8,23 @@ function Display (props) {
 
 
     let user1data = {
-        squares: props.scoreObj.momsquares,
-        score: props.scoreObj.momscore,
-        time: props.scoreObj.momtime,
-        text: props.scoreObj.fulltextmom,
+        squares: props.scoreObj.user1squares,
+        score: props.scoreObj.user1score,
+        time: props.scoreObj.user1time,
+        text: props.scoreObj.fulltextuser1,
         wordle: props.scoreObj.wordle,
         winloss: "tie",
-        reversesolution: props.scoreObj.momreversesolution
+        reversesolution: props.scoreObj.user1reversesolution
     }
 
     let user2data = {
-        squares: props.scoreObj.willsquares,
-        score: props.scoreObj.willscore,
-        time: props.scoreObj.willtime,
-        text: props.scoreObj.fulltextwill,
+        squares: props.scoreObj.user2squares,
+        score: props.scoreObj.user2score,
+        time: props.scoreObj.user2time,
+        text: props.scoreObj.fulltextuser2,
         wordle: props.scoreObj.wordle,
         winloss: "tie",
-        reversesolution: props.scoreObj.willreversesolution
+        reversesolution: props.scoreObj.user2reversesolution
     }
     let user1wordle = [];
     let user2wordle = [];

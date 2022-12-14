@@ -4,16 +4,15 @@ import wJSON from '../../wordleScores.json';
 
 const wordles = Object.keys(wJSON).length;
 
-let avewinner = 0; //higher means will lower means mom
-let willsent = 0;
-let momsent = 0;
-let willtimetotal = 0; //average time of day, maybe measures 0 to 2400
-let momtimetotal = 0;
-let willscoretotal = 0;
-let momscoretotal = 0;
+let avewinner = 0; //higher means user2 lower means user1
+let user2sent = 0;
+let user1sent = 0;
+let user2timetotal = 0; //average time of day, maybe measures 0 to 2400
+let user1timetotal = 0;
+let user2scoretotal = 0;
+let user1scoretotal = 0;
 let previouswordle = (wJSON[0].wordle - 1);
 let currentstreakstart = (wJSON[0].wordle - 1);
-let gapstarttime = 0;
 let longeststreak = 0; //measured in number sent
 let longestgap = 0; //measured in time difference
 let streakwordle = 0;
@@ -33,19 +32,19 @@ for(let i = 0; i < wordles; i++) {
   let obj = wJSON[i];
 
   //this could be a good helper function
-  if (obj.willscore != null) {
-    willsent += 1;
-    willscoretotal += obj.willscore;
-    if (obj.willscore < obj.momscore) {
+  if (obj.user2score != null) {
+    user2sent += 1;
+    user2scoretotal += obj.user2score;
+    if (obj.user2score < obj.user1score) {
       avewinner += 1;
     }
   } else {
     avewinner -= 1;
   }
-  if (obj.momscore != null) {
-    momsent += 1
-    momscoretotal += obj.momscore;
-    if (obj.momscore < obj.willscore) {
+  if (obj.user1score != null) {
+    user1sent += 1
+    user1scoretotal += obj.user1score;
+    if (obj.user1score < obj.user2score) {
       avewinner -= 1;
     }
   } else {
@@ -67,10 +66,10 @@ for(let i = 0; i < wordles; i++) {
   }
 
 
-  willtimetotal += timeHourConversion(obj.willtime);
-  momtimetotal += timeHourConversion(obj.momtime); 
+  user2timetotal += timeHourConversion(obj.user2time);
+  user1timetotal += timeHourConversion(obj.user1time); 
   previouswordle = obj.wordle;
-  gapstarttime = Math.min(obj.willtime, obj.momtime);
+  gapstarttime = Math.min(obj.user2time, obj.user1time);
 
 }
 
@@ -83,7 +82,7 @@ function timeHourConversion (CFTime) {
   return ((hour + (minutes/60))/24); //Here I'm representing time as what percent into the day you've reached. 
   //You may ask: why on earth would you ever do that?
   //This is because you cannot easily average times between eachother in base 10
-  //Will convert back afterwards. Measurements of time are relative, I don't want to hear it.
+  //user2 convert back afterwards. Measurements of time are relative, I don't want to hear it.
 }
 
 
@@ -100,11 +99,11 @@ function timeStringConversion (time){
   return (Math.floor(hours) + ":" + minutes + ampm); 
 
 }
-console.log(willtimetotal, momtimetotal);
-const willAverageTime = timeStringConversion(willtimetotal / willsent);
-const momAverageTime = timeStringConversion(momtimetotal / momsent);
-const willAverageScore = willscoretotal / willsent;
-const momAverageScore = momscoretotal / momsent;
+console.log(user2timetotal, user1timetotal);
+const user2AverageTime = timeStringConversion(user2timetotal / user2sent);
+const user1AverageTime = timeStringConversion(user1timetotal / user1sent);
+const user2AverageScore = user2scoretotal / user2sent;
+const user1AverageScore = user1scoretotal / user1sent;
 
 let winner = "Tie!";
 if (avewinner > 0) {
@@ -123,21 +122,21 @@ const Stats = () => {
             <p className="left1">Wordles completed:</p>
             <p className="right1">{wordles}</p>
             <p className="left1">Sent by Mom:</p>
-            <p className="right1">{momsent}</p>
+            <p className="right1">{user1sent}</p>
             <p className="left1">Sent by Will:</p>
-            <p className="right1">{willsent}</p>
+            <p className="right1">{user2sent}</p>
             <p className="left1">Longest streak:</p>
             <p className="right1">{longeststreak + " (" + streakwordle + " to " + (streakwordle + longeststreak) + ")"}</p>
             <p className="left1">Longest gap:</p>
             <p className="right1">{longestgap + " (" + (gapwordle - longestgap) + " to " + (gapwordle) + ")"}</p>
             <p className="left1">Mom average score:</p>
-            <p className="right1">{Math.round(momAverageScore * 100) / 100}</p>
+            <p className="right1">{Math.round(user1AverageScore * 100) / 100}</p>
             <p className="left1">Will average score:</p>
-            <p className="right1">{Math.round(willAverageScore * 100) / 100}</p>
+            <p className="right1">{Math.round(user2AverageScore * 100) / 100}</p>
             <p className="left1">Mom average time of day:</p>
-            <p className="right1">{momAverageTime}</p>
+            <p className="right1">{user1AverageTime}</p>
             <p className="left1">Will average time of day:</p>
-            <p className="right1">{willAverageTime}</p>
+            <p className="right1">{user2AverageTime}</p>
             <p className="left1">Average daily winner:</p>
             <p className="right1" style={{color: "#d0ffcc"}}>{winner}</p>
             <br></br><br></br><br></br><br></br>
