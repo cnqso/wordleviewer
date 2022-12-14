@@ -11,7 +11,7 @@
 
 
 .right1 {
-    font-size: calc(2vh + 1vw);
+    font-size: calc(2vh + 0.8vw);
     margin-right: 1vw;
     text-align: left; 
     overflow-wrap: break-word;
@@ -22,7 +22,7 @@
 
 
 .left1 {
-    font-size: calc(2vh + 1vw);
+    font-size: calc(2vh + 0.8vw);
     margin-right: 0.5vw;
   }
     

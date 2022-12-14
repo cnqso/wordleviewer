@@ -90,7 +90,7 @@ function timeHourConversion (CFTime) {
 function timeStringConversion (time){  
   console.log(time);
   let hours = time*24;
-  let minutes = Math.round((hours-(Math.floor(hours)))*60).toString();
+  let minutes = Math.floor((hours-(Math.floor(hours)))*60).toString();
   minutes = minutes.padStart(2,"0");
   let ampm = "AM";
   if (hours >= 13) {

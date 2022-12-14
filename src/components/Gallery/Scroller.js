@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { spring, Motion, presets } from "react-motion";
 import {motion} from 'framer-motion';
 import "./Scroller.css";
@@ -29,10 +29,7 @@ const useIntersect = ({ root = null, rootMargin, threshold = 0 }) => {
 	return [setNode, entry];
 };
 
-// Generate collection
-const generate = (v) => Array.from(Array(v), (_, x) => x);
-
-const Box = ({ root, scoreObj, propz, currentsel }) => {
+const Selection = ({ root, scoreObj, funct, currentsel }) => {
 	const [ref, entry] = useIntersect({ root, threshold: 0.5 });
 
 	const inView = entry.intersectionRatio >= 0.5;
@@ -42,7 +39,7 @@ const Box = ({ root, scoreObj, propz, currentsel }) => {
 	};
 
 	const handleOnClick = (event) => {
-		propz.onChange(scoreObj);
+		funct.onChange(scoreObj);
 	}
 
 	const checkIfSelected = () => {
@@ -73,18 +70,16 @@ const Box = ({ root, scoreObj, propz, currentsel }) => {
 	);
 };
 
-
-
 const Scroller = (props) => {
 	const ref = useRef(null);
 	return (
 			<div ref={ref} className="scroller">
-				{Scores.map((k,i) => (
-					<Box 
+				{Scores.map((k) => (
+					<Selection 
 						key={k.wordle} 
 						root={ref} 
 						scoreObj={k} 
-						propz={props}
+						funct={props}
 						currentsel={props.selection}
 					/>
 				))}

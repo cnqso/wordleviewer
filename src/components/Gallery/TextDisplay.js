@@ -5,38 +5,38 @@ import {motion} from 'framer-motion';
 
 function TextDisplay(props) {
 let top = "from-me";
-let topyear = props.willtime;
-let toptext = props.willtext;
+let topyear = props.user2time;
+let toptext = props.user2text;
 let toptooltip = "left-start";
 let bottom = "from-them";
-let bottomyear = props.momtime;
+let bottomyear = props.user1time;
 let bottomtooltip="right-start";
-let bottomtext=props.momtext;
+let bottomtext=props.user1text;
 
 
-if (props.momtime < props.willtime | props.willtime === null) {
+if (props.user1time < props.user2time | props.user2time === null) {
     top="from-them";
-    topyear = props.momtime;
-    toptext=props.momtext;
+    topyear = props.user1time;
+    toptext=props.user1text;
     toptooltip="right-start";
     bottom="from-me";
-    bottomyear = props.willtime;
+    bottomyear = props.user2time;
     bottomtooltip="left-start";
-    bottomtext=props.willtext;
+    bottomtext=props.user2text;
 }
-if (props.momtime === null) {
+if (props.user1time === null) {
     top = "from-me";
-    topyear = props.willtime;
-    toptext = props.willtext;
+    topyear = props.user2time;
+    toptext = props.user2text;
     toptooltip = "left-start";
     bottom = "from-them";
-    bottomyear = props.momtime;
-    bottomtext=props.momtext;
+    bottomyear = props.user1time;
+    bottomtext=props.user1text;
     bottomtooltip="right-start";
 }
 
 function twoMessages () {
-    if (props.willtime === null | props.momtime === null) {
+    if (props.user2time === null | props.user1time === null) {
         return false;
     }
     return true;
@@ -71,8 +71,8 @@ function unixTimeToDateString(CFTime) {
 
     return (
 
-    <motion.div key={props.willtext} initial={{opacity:0, y:200}} animate={{opacity: 1, y:0}} transition={{duration:0.5}}className="imessage" style={styles.imessage}> 
-        <Tooltip key={props.willtime}
+    <motion.div key={props.user2text} initial={{opacity:0, y:200}} animate={{opacity: 1, y:0}} transition={{duration:0.5}}className="imessage" style={styles.imessage}> 
+        <Tooltip key={props.user2time}
             title={<p style={{fontSize: "calc(1.2vmin + 1vw)"}}>{unixTimeToDateString(topyear)}</p>} 
             placement={toptooltip}>
                 <p className={top}>{toptext}</p>
