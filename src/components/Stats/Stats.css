@@ -11,19 +11,19 @@
 
 
 .right1 {
-    font-size: calc(3vh);
+    font-size: calc(2vh + 1vw);
     margin-right: 1vw;
-    text-align: justify; 
+    text-align: left; 
     overflow-wrap: break-word;
     margin-right: 0;
-    margin-left: 1vw;
+    margin-left: 2vw;
 }
 
 
 
 .left1 {
-    font-size: calc(3vh);
-    margin-right: 1vw;
+    font-size: calc(2vh + 1vw);
+    margin-right: 0.5vw;
   }
     
     

@@ -37,7 +37,6 @@ if (props.dataObj.winloss === "win") {
 
 checkIfNull(props.dataObj.score);
 const ref = useRef(null);
-
   return (
       <div>
         <div ref={ref} id="wrapper" className="wordledisplay">

@@ -76,36 +76,28 @@ for(let i = 0; i < wordles; i++) {
 
 
 
-/* for each
-if willscore != null { willsent ++    } else {avewinner --}
-if momscore != null {momsent ++} else {avewinner ++}
-willtimetotal += willtime.time() or something  
-momtimetotal += momtime.time()
-willscoretotal += willscore
-momscoretotal += momscore
-longest gap ++
-*/
 function timeHourConversion (CFTime) {
   let time = cfTimeToDate(CFTime);
   const hour = time.getHours();
   const minutes = time.getMinutes();
-  console.log((hour*100 + minutes)/2400);
-  return ((hour*100 + minutes)/2400); //Here I'm representing time as what percent into the day you've reached. 
+  return ((hour + (minutes/60))/24); //Here I'm representing time as what percent into the day you've reached. 
+  //You may ask: why on earth would you ever do that?
+  //This is because you cannot easily average times between eachother in base 10
   //Will convert back afterwards. Measurements of time are relative, I don't want to hear it.
 }
 
 
 function timeStringConversion (time){  
   console.log(time);
-  let newTime = time*2400;
+  let hours = time*24;
+  let minutes = Math.round((hours-(Math.floor(hours)))*60).toString();
+  minutes = minutes.padStart(2,"0");
   let ampm = "AM";
-  if (newTime > 1200) {
-    newTime -= 1200;
+  if (hours >= 13) {
+    hours -= 12;
     ampm = "PM";
   }
-  const dig1 = Math.floor(newTime/100);
-  const dig2 = Math.round(newTime%100);
-  return (dig1 + ":" + dig2 + ampm); 
+  return (Math.floor(hours) + ":" + minutes + ampm); 
 
 }
 console.log(willtimetotal, momtimetotal);
@@ -126,7 +118,7 @@ const Stats = () => {
   return (
     <div className = "about1">
         <main>
-            <p className="left1"> Stats  </p>
+            <p className="left1" style={{color: "#d0ffcc"}}> Stats  </p>
             <p className="right1"></p>
             <p className="left1">Wordles completed:</p>
             <p className="right1">{wordles}</p>
@@ -135,9 +127,9 @@ const Stats = () => {
             <p className="left1">Sent by Will:</p>
             <p className="right1">{willsent}</p>
             <p className="left1">Longest streak:</p>
-            <p className="right1">{longeststreak + ", from " + streakwordle + " to " + ((streakwordle + longeststreak))}</p>
+            <p className="right1">{longeststreak + " (" + streakwordle + " to " + (streakwordle + longeststreak) + ")"}</p>
             <p className="left1">Longest gap:</p>
-            <p className="right1">{longestgap + ", from " + (gapwordle - longestgap) + " to " + (gapwordle)}</p>
+            <p className="right1">{longestgap + " (" + (gapwordle - longestgap) + " to " + (gapwordle) + ")"}</p>
             <p className="left1">Mom average score:</p>
             <p className="right1">{Math.round(momAverageScore * 100) / 100}</p>
             <p className="left1">Will average score:</p>
@@ -147,7 +139,7 @@ const Stats = () => {
             <p className="left1">Will average time of day:</p>
             <p className="right1">{willAverageTime}</p>
             <p className="left1">Average daily winner:</p>
-            <p className="right1">{winner}</p>
+            <p className="right1" style={{color: "#d0ffcc"}}>{winner}</p>
             <br></br><br></br><br></br><br></br>
             <br></br>
             <br></br>
