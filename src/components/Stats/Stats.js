@@ -15,6 +15,7 @@ let previouswordle = (wJSON[0].wordle - 1);
 let currentstreakstart = (wJSON[0].wordle - 1);
 let longeststreak = 0; //measured in number sent
 let longestgap = 0; //measured in time difference
+let gapstarttime = 0;
 let streakwordle = 0;
 let gapwordle = 0;
 
@@ -139,11 +140,9 @@ const Stats = () => {
             <p className="right1">{user2AverageTime}</p>
             <p className="left1">Average daily winner:</p>
             <p className="right1" style={{color: "#d0ffcc"}}>{winner}</p>
-            <br></br><br></br><br></br><br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
+            <br/><br/><br/><br/><br/><br/>
+            
+
         </main>
     </div>
   );

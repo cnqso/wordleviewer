@@ -40,9 +40,9 @@ If anything doesn't work perfectly right out of the box, please let me know.
 
 ## Plan to implement
 
-* Finish the webapp and upload a python script with an anonymized example file.
+* Finish the demo and upload a python script with an anonymized example file.
 * Rename all proper nouns to "user1" and "user2"
-*  An automatically updating and publicly accessible database of all wordle answers in JSON, .db, CSV, and text formats (somehow was not able to find anything other than plaintext websites).
+* An automatically updating and publicly accessible database of all wordle answers in JSON, .db, CSV, and text formats (somehow was not able to find anything other than plaintext websites).
 * Integrate the python script and react app in a more "plug and play" way.
 * A feature in the python script which allows users to enter a phone number rather than a handle id, which would allow a better "plug and play" experience.
 * Codepen-friendly showcases of the animations, CFAbsolute Time -> Date, and reverse solution modules
