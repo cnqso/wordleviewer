@@ -12,8 +12,8 @@ const LoremIpsumPage = () => {
                 received Wordle scores found in one text conversation. 
                 The display is built with React, and the "backend" 
                 is a Python script with SQLite and JSON libraries.<br/>
-                <a style={{color: "#d0ffcc"}} href="https://github.com/cnqso"> Github</a><a style={{color: "#d0ffcc"}} href="https://twitter.com/cnqso"> Twitter</a><a style={{color: "#d0ffcc"}} href="https://github.com/cnqso"> Codepen</a><a style={{color: "#d0ffcc"}} href="mailto:WiMiKelly@gmail.com"> Email</a>
-                
+                {/* <a style={{color: "#d0ffcc"}} href="https://github.com/cnqso"> Github</a><a style={{color: "#d0ffcc"}} href="https://twitter.com/cnqso"> Twitter</a><a style={{color: "#d0ffcc"}} href="https://github.com/cnqso"> Codepen</a><a style={{color: "#d0ffcc"}} href="mailto:WiMiKelly@gmail.com"> Email</a>
+                 */}
                 
 
             </p>

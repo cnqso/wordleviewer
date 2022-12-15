@@ -19,7 +19,7 @@ Solutions are not included in the wordle data, so the display initially only sho
 
 ## Demo
 
-Forthcoming
+[Click here.](http://cnqso.github.io/wordleviewer/)
 
 ## Customizing
 
