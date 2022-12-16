@@ -5,11 +5,9 @@ import Scroller from './Scroller';
 import Scores from '../../wordleScores.json';
 
 function Gallery () {
-    const [showDisplay, setShowDisplay] = useState(true);
     const [currentSelection, setCurrentSelection] = useState(Scores[0]); 
     const receiveScoresHandler = (event) => {
         setCurrentSelection(event);
-        //setShowDisplay(!showDisplay);
     }
 
 
@@ -22,7 +20,6 @@ function Gallery () {
             <Display
                 key = {currentSelection}
                 scoreObj = {currentSelection}
-                visible = {showDisplay}
             />
         </div>
     );

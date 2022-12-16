@@ -1,57 +1,55 @@
 import React from 'react';
 import "./Display.css";
 import WordleDisplay from "./WordleDisplay";
-import {motion} from 'framer-motion';
 import TextDisplay from './TextDisplay';
-import Scores from '../../wordleScores.json';
 
 
 function Display (props) {
 
 
-    let momdata = {
-        squares: props.scoreObj.momsquares,
-        score: props.scoreObj.momscore,
-        time: props.scoreObj.momtime,
-        text: props.scoreObj.fulltextmom,
+    let user1data = {
+        squares: props.scoreObj.user1squares,
+        score: props.scoreObj.user1score,
+        time: props.scoreObj.user1time,
+        text: props.scoreObj.fulltextuser1,
         wordle: props.scoreObj.wordle,
         winloss: "tie",
-        reversesolution: props.scoreObj.momreversesolution
+        reversesolution: props.scoreObj.user1reversesolution
     }
 
-    let willdata = {
-        squares: props.scoreObj.willsquares,
-        score: props.scoreObj.willscore,
-        time: props.scoreObj.willtime,
-        text: props.scoreObj.fulltextwill,
+    let user2data = {
+        squares: props.scoreObj.user2squares,
+        score: props.scoreObj.user2score,
+        time: props.scoreObj.user2time,
+        text: props.scoreObj.fulltextuser2,
         wordle: props.scoreObj.wordle,
         winloss: "tie",
-        reversesolution: props.scoreObj.willreversesolution
+        reversesolution: props.scoreObj.user2reversesolution
     }
-
-    let willwordle = [];
-    let momwordle = [];
-    if (momdata.score != null && willdata.score != null) {
-        willwordle = Array.from(willdata.reversesolution);
-        momwordle = Array.from(momdata.reversesolution);
+    let user1wordle = [];
+    let user2wordle = [];
+    
+    if (user1data.score != null && user2data.score != null) {
+        user2wordle = Array.from(user2data.reversesolution);
+        user1wordle = Array.from(user1data.reversesolution);
     } else {
-        momwordle = Array(30).fill("");
-        willwordle = momwordle;
+        user1wordle = Array(30).fill("");
+        user2wordle = user1wordle;
     }
 
 
-    if (momdata.score < willdata.score && momdata.score != null) {
-        momdata.winloss = "win";
-        willdata.winloss = "lose";
-    } else if (momdata.score > willdata.score && willdata.score != null) {
-        willdata.winloss = "win";
-        momdata.winloss = "lose";
-    } else if (momdata.score === null) {
-        willdata.winloss = "win";
-        willwordle = Array.from(willdata.reversesolution);
-    } else if (willdata.score === null) {
-        momdata.winloss = "win";
-        momwordle = Array.from(momdata.reversesolution);
+    if (user1data.score < user2data.score && user1data.score != null) {
+        user1data.winloss = "win";
+        user2data.winloss = "lose";
+    } else if (user1data.score > user2data.score && user2data.score != null) {
+        user2data.winloss = "win";
+        user1data.winloss = "lose";
+    } else if (user1data.score === null) {
+        user2data.winloss = "win";
+        user2wordle = Array.from(user2data.reversesolution);
+    } else if (user2data.score === null) {
+        user1data.winloss = "win";
+        user1wordle = Array.from(user1data.reversesolution);
     }
 
 
@@ -60,19 +58,19 @@ function Display (props) {
             <div id="nohighlight" className="title">Wordle #{props.scoreObj.wordle}</div>
             <WordleDisplay
                 key = {props.scoreObj.wordle}
-                letters = {momwordle}
-                dataObj = {momdata}
+                letters = {user1wordle}
+                dataObj = {user1data}
             />
             <WordleDisplay 
                 key = {props.scoreObj.wordle*2}
-                letters = {willwordle}  
-                dataObj = {willdata} 
+                letters = {user2wordle}  
+                dataObj = {user2data} 
              />
             <TextDisplay
-                momtime = {momdata.time}
-                willtime = {willdata.time}
-                momtext = {momdata.text}
-                willtext = {willdata.text}
+                user1time = {user1data.time}
+                user2time = {user2data.time}
+                user1text = {user1data.text}
+                user2text = {user2data.text}
             />
             {/* <br style={{margin: "250px"}}></br> */}
         </div>
