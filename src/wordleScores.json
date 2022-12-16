@@ -465,14 +465,14 @@
         "wordle": 284,
         "user2score": 5,
         "user1score": 6,
-        "user2squares": "GYBBGGBGBGGGGBGGGGBGGGGG",
+        "user2squares": "GYBBGGBGBGGGGBGGGGBGGGGGG",
         "user1squares": "BYBYGGBGBGGGGBGGGGBGGGGBGGGGGG",
         "user2time": 670511689448000000,
         "user1time": 670354778739714176,
         "fulltextuser2": "Yesterday Wordle 284 5/6 \n\n🟩🟨⬜⬜🟩\n🟩⬜🟩⬜🟩\n🟩🟩🟩⬜🟩\n🟩🟩🟩⬜🟩\n🟩🟩🟩🟩🟩",
         "fulltextuser1": "Wordle 284 6/6\n\n⬜🟨⬜🟨🟩\n🟩⬜🟩⬜🟩\n🟩🟩🟩⬜🟩\n🟩🟩🟩⬜🟩\n🟩🟩🟩⬜🟩\n🟩🟩🟩🟩🟩\n\nOh man 😬😳 That was a close one ",
         "solution": "STOVE",
-        "user2reversesolution": "SOARESCORESTORESTONE          ",
+        "user2reversesolution": "SOARESCORESTORESTONESTOVE     ",
         "user1reversesolution": "HOUSESCORESTORESTONESTOLESTOVE"
     },
     {
