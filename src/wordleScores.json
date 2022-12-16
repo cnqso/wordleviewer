@@ -1774,7 +1774,7 @@
         "fulltextuser2": "Wordle 531 3/6\n\n⬛⬛🟩⬛🟩\n🟨⬛🟩⬛🟩\n🟩🟩🟩🟩🟩",
         "fulltextuser1": "Wordle 531 5/6\n\n⬜🟨⬜⬜🟩\n⬜⬜🟩⬜🟩\n⬜🟩🟩⬜🟩\n⬜🟩🟩⬜🟩\n🟩🟩🟩🟩🟩",
         "solution": "CHAFE",
-        "willreversesolution": "GRATEFRAMECHAFE               ",
-        "momreversesolution": "RAISESOARESHARESHAPECHAFE     "
+        "user2reversesolution": "GRATEFRAMECHAFE               ",
+        "user1reversesolution": "RAISESOARESHARESHAPECHAFE     "
     }
 ]
