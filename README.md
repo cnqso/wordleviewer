@@ -25,25 +25,19 @@ Solutions are not included in the wordle data, so the display initially only sho
 
 To use your own wordle scores, you need:
 * An unencrypted iPhone backup (Accomplishable via iTunes or a 3rd-party alternative like [iMazing](https://imazing.com/)). It will almost certainly be named "3d0d7e5fb2ce288813306e4d4636395e047a3d28.db". Search this file name in your appdata (PC) or your Application Support (Mac) folder.
-* A way of reading SQLite data ([I used DB Browser](https://sqlitebrowser.org/))
+* Python and the libraries listed in "./iPhoneWordleExtractor/requirements.txt"
+* npm to run/build the react app
 
 1. Place your text backup file it in the "SQLWordle" folder.
-2. Find the handle_id of the conversation you're interested in. This will be in the "messages" table of your text backup. If you're having trouble, try searching strings from texts you have exchanged with this person.
-3. Run the python script. It will output a file called "wordleScores.db" and "wordleScores.json".
-4. Place "wordleScores.json" into the "src" folder of wordleviewer
-5. Launch the app via the index.html file!
-
-
+2. Change the "phonenumber" variable at the very top of iphonewordle.py to the phone number of your text partnet.
+3. Run iphonewordle.py. Make sure you are in the iPhoneWordleExtractor directory when you do so. It will output a file called "wordleScores.json" into the src directory which is read by the react app.
+5. Launch the react app using npm start!
 
 If anything doesn't work perfectly right out of the box, please let me know. 
 
 
 ## Plan to implement
 
-* Finish the demo and upload a python script with an anonymized example file.
-* Rename all proper nouns to "user1" and "user2"
 * An automatically updating and publicly accessible database of all wordle answers in JSON, .db, CSV, and text formats (somehow was not able to find anything other than plaintext websites).
-* Integrate the python script and react app in a more "plug and play" way.
-* A feature in the python script which allows users to enter a phone number rather than a handle id, which would allow a better "plug and play" experience.
 * Codepen-friendly showcases of the animations, CFAbsolute Time -> Date, and reverse solution modules
 * Automatic database updating functionality (longshot).

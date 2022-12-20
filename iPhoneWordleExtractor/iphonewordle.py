@@ -5,7 +5,7 @@ import os
 from reverseWordleSolver import reverseSolveWordle
 
 #Edit this to any 10 digit phone number to receive those texts
-phonenumber = '6168856027'
+phonenumber = "[---> your friend's phone number here <---]"
 
 global conn
 global c
