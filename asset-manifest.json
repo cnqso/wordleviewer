@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/wordleviewer/static/css/main.d7193e48.css",
-    "main.js": "/wordleviewer/static/js/main.6c5be9a1.js",
+    "main.js": "/wordleviewer/static/js/main.c1b992f9.js",
     "static/js/787.41306ea7.chunk.js": "/wordleviewer/static/js/787.41306ea7.chunk.js",
     "index.html": "/wordleviewer/index.html",
     "main.d7193e48.css.map": "/wordleviewer/static/css/main.d7193e48.css.map",
-    "main.6c5be9a1.js.map": "/wordleviewer/static/js/main.6c5be9a1.js.map",
+    "main.c1b992f9.js.map": "/wordleviewer/static/js/main.c1b992f9.js.map",
     "787.41306ea7.chunk.js.map": "/wordleviewer/static/js/787.41306ea7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d7193e48.css",
-    "static/js/main.6c5be9a1.js"
+    "static/js/main.c1b992f9.js"
   ]
 }
