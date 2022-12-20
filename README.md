@@ -2,6 +2,10 @@
 
 Wordle Viewer is a Christmas gift which takes in an iPhone backup and displays all sent or received Wordle scores in one text conversation. The display is built with React, and the "backend" is a Python script using the SQLite, JSON, and wordfreq libraries. 
 
+## Demo
+
+[Click here.](http://cnqso.github.io/wordleviewer/)
+
 ## Features
 
 ### Gallery
@@ -16,10 +20,6 @@ The Python script first runs through the user's iMessage SQLite database to find
 
 ### Reverse Solutions
 Solutions are not included in the wordle data, so the display initially only showed the day's answer in all squares. To solve this, I made an alogrithm which takes in the day's answer and the wordle grid then returns all possible combinations of words to reach those answers ordered by the likelihood of usage. Likelihood is determined by the frequency of each word's usage in the english language (huge thanks to the [wordfreq library](https://pypi.org/project/wordfreq/) by Robyn Speer) as well as "biased words" for each user (common starting words, common second guesses, etc). This project only makes use of the most likely solution. 
-
-## Demo
-
-[Click here.](http://cnqso.github.io/wordleviewer/)
 
 ## Customizing
 
